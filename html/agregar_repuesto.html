@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Nuevo Repuesto</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos adicionales si los necesitas -->
+    <style>
+        /* Estilos personalizados */
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="mb-4">Crear Nuevo Repuesto</h2>
+        <form action="../src/insertar_repuesto.php" method="post" class="needs-validation" novalidate>
+            <div class="form-group">
+                <label for="nombre">Nombre del Repuesto:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                <div class="invalid-feedback">
+                    Por favor ingrese el nombre del repuesto.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="cantidad">Cantidad en Stock:</label>
+                <input type="number" class="form-control" id="cantidad" name="cantidad" required>
+                <div class="invalid-feedback">
+                    Por favor ingrese la cantidad en stock.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="precio">Precio Unitario:</label>
+                <input type="number" step="0.01" class="form-control" id="precio" name="precio" required>
+                <div class="invalid-feedback">
+                    Por favor ingrese el precio unitario.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="proveedor">Proveedor:</label>
+                <input type="text" class="form-control" id="proveedor" name="proveedor" required>
+                <div class="invalid-feedback">
+                    Por favor ingrese el proveedor del repuesto.
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Crear Repuesto</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS y dependencias opcionales -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Habilitar validación de formulario en Bootstrap
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+</body>
+</html>
